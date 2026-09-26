@@ -83,7 +83,7 @@
     'save as draft': 'myProducts',
     'view live product': 'productDetails',
 
-    'send inquiry to supplier': 'messages',
+    'send inquiry to supplier': 'messages', sgsfg df g
     'send inquiry': 'messages',
     'contact supplier': 'messages',
     'contact apex textiles co.': 'messages',
