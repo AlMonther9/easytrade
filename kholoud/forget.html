@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTrade - Reset Password</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #reset-page {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e1effe 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .reset-container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .reset-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 45px 40px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+            width: 100%;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .reset-card .logo-area {
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--ink);
+            margin-bottom: 24px;
+        }
+
+        .reset-card .logo-area img {
+            height: 28px;
+        }
+
+        .reset-card h2 {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--ink);
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .reset-card .auth-subtitle {
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .reset-card .form-group {
+            margin-bottom: 24px;
+        }
+
+        .reset-card .btn-primary {
+            padding: 13px 20px;
+            border-radius: var(--radius-lg);
+        }
+
+        .reset-card .btn-primary.full-width {
+            margin-bottom: 25px;
+        }
+
+        .back-link-container {
+            text-align: center;
+            border-top: 1px solid var(--page-bg);
+            padding-top: 20px;
+        }
+
+        .back-link-container a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="reset-page">
+        <div class="reset-container">
+            <div class="reset-card">
+                <div class="logo-area">
+                    <img src="Container (1).png" alt=""> EasyTrade
+                </div>
+                <h2>Reset your password</h2>
+                <p class="auth-subtitle center">Enter your email address and we will send you a link to reset your password.</p>
+
+                <div class="form-group">
+                    <label for="reset-email">Work Email</label>
+                    <div class="input-with-icon">
+                        <img src="Icon.png" alt="">
+                        <input type="email" id="reset-email" class="form-input" placeholder="name@company.com" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <a href="login.html" class="btn-primary full-width">Send Reset Link &rarr;</a>
+
+                <div class="back-link-container">
+                    <a href="login.html">&larr; Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="easytrade-routes.js" defer></script>
+</body>
+</html>

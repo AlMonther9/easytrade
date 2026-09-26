@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyTrade — Account Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../easytrade-sidebar.css">
+  <link rel="stylesheet" href="../easytrade-settings-sidebar.css">
+  <link rel="stylesheet" href="../easytrade-topbar.css">
+</head>
+<body>
+  <!-- Navbar: shared by every page, built by ../easytrade-topbar.js -->
+  <header id="etTopbar"></header>
+
+  <div class="layout et-page">
+
+    <aside class="et-settings-sidebar">
+      <p class="et-set-eyebrow">Settings</p>
+
+      <nav class="et-set-nav" aria-label="Settings">
+        <a href="../Buyer%20Personal%20Profile/index.html" class="et-set-item">
+          <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Public Profile</span>
+        </a>
+        <a href="index.html" class="et-set-item is-active" aria-current="page">
+          <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/></svg>
+          <span>Account Security</span>
+        </a>
+        <a href="../KKK/index.html" class="et-set-item">
+          <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 14.5 18 8.5Z"/><path d="M13.7 19.5a2 2 0 0 1-3.4 0"/></svg>
+          <span>Notifications</span>
+        </a>
+      </nav>
+
+      <div class="et-set-help">
+        <p class="et-set-help-title">Security Alert</p>
+        <p class="et-set-help-text">Ensure your password is updated regularly to keep your trade data safe.</p>
+        <a href="#" class="et-set-help-btn">Security Logs</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-header">
+        <h1>Account Security</h1>
+        <p>Manage your password and extra security verification methods.</p>
+      </header>
+
+      <section class="card security-card">
+        <h2 class="card-title">
+          <img src="assets/password-lock.png" alt="" class="title-icon">
+          Change Password
+        </h2>
+
+        <form id="securityForm" novalidate>
+          <div class="field">
+            <label for="currentPassword">Current Password</label>
+            <div class="input-wrap">
+              <input type="password" id="currentPassword" name="currentPassword" placeholder="••••••••••••" autocomplete="current-password">
+              <button type="button" class="reveal" data-target="currentPassword" aria-label="Show password">Show</button>
+            </div>
+            <p class="error" id="currentPasswordError"></p>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="newPassword">New Password</label>
+              <input type="password" id="newPassword" name="newPassword" placeholder="Min. 8 characters" autocomplete="new-password">
+              <div class="strength"><span id="strengthBar"></span></div>
+              <p class="error" id="newPasswordError"></p>
+            </div>
+            <div class="field">
+              <label for="confirmPassword">Confirm New Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter new password" autocomplete="new-password">
+              <p class="error" id="confirmPasswordError"></p>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <div class="tfa-row">
+            <h2 class="card-title">
+              <img src="assets/shield-check.png" alt="" class="title-icon">
+              Two-Factor Authentication (2FA)
+            </h2>
+            <button type="button" class="switch on" id="tfaSwitch" role="switch" aria-checked="true" aria-label="Toggle two-factor authentication">
+              <span class="knob"></span>
+            </button>
+          </div>
+
+          <div class="email-box" id="emailBox">
+            <span class="email-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#29ABE9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m2 7 10 6 10-6"></path>
+              </svg>
+            </span>
+            <div>
+              <p class="email-title">Email Authentication</p>
+              <p class="email-text">Add an extra layer of security to your account by requiring a code from your email during login.</p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-gradient" id="updateBtn">Update Security Settings</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card devices-card">
+        <div class="devices-info">
+          <img src="assets/devices-circle.png" alt="" class="devices-icon">
+          <div>
+            <p class="devices-title">Recent Logged-in Devices</p>
+            <p class="devices-text">Currently active on <span id="deviceCount">2</span> devices</p>
+          </div>
+        </div>
+        <a href="#" class="link" id="manageSessions">Manage Sessions</a>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../easytrade-topbar.js"></script>
+  <script src="../easytrade-sidebar.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

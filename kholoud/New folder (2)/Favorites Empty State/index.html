@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved Products — EasyTrade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../easytrade-topbar.css" />
+</head>
+<body>
+
+  <!-- Navbar: shared by every page, built by ../easytrade-topbar.js -->
+  <header id="etTopbar"></header>
+
+  <main class="page">
+    <!-- Page header -->
+    <header class="page-header">
+      <h1 class="page-title">Saved Products</h1>
+      <p class="page-subtitle"><span id="item-count">0</span> items</p>
+    </header>
+
+    <!-- Empty state card -->
+    <section class="empty-card">
+      <div class="illustration" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="heart-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2EA9E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/>
+          </svg>
+        </div>
+        <div class="badge-plus">+</div>
+        <div class="badge-lock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8A97A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="11" width="14" height="9" rx="2"/>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+          </svg>
+        </div>
+      </div>
+
+      <h2 class="empty-title">No saved products yet.</h2>
+      <p class="empty-text">
+        Explore our extensive catalog of wholesale goods. Tap<br />
+        the heart icon on any product to save it to your favorites<br />
+        list for quick access later.
+      </p>
+
+      <button data-et="marketplace" class="cta-btn" id="browse-btn">
+        Browse Marketplace
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- Feature cards -->
+    <section class="features">
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2EA9E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2z"/>
+          </svg>
+        </div>
+        <h3>Quick Access</h3>
+        <p>Jump back to products you're interested in without searching again.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2EA9E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/>
+            <path d="M10.3 21a2 2 0 0 0 3.4 0"/>
+          </svg>
+        </div>
+        <h3>Price Alerts</h3>
+        <p>Get notified when your favorite items go on sale or restock.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2EA9E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8h12l-3-3M20 16H8l3 3"/>
+          </svg>
+        </div>
+        <h3>Easy Comparison</h3>
+        <p>Keep potential inventory together to compare prices and specs.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Support</a>
+      <a href="#">About Us</a>
+    </nav>
+
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.6 8.6 0 0 1-2.72 1.04A4.28 4.28 0 0 0 16.11 4a4.3 4.3 0 0 0-4.3 4.3c0 .34.04.67.1.99A12.2 12.2 0 0 1 3.1 5.15a4.3 4.3 0 0 0 1.33 5.74 4.26 4.26 0 0 1-1.94.54v.05a4.3 4.3 0 0 0 3.44 4.21 4.3 4.3 0 0 1-1.93.07 4.3 4.3 0 0 0 4.01 2.98A8.62 8.62 0 0 1 2 18.56a12.16 12.16 0 0 0 6.59 1.93c7.9 0 12.23-6.55 12.23-12.23v-.56A8.72 8.72 0 0 0 22.46 6z"/>
+        </svg>
+      </a>
+    </div>
+
+    <p class="footer-copy">© <span id="year">2024</span> EasyTrade Wholesale Marketplace. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status">Opening marketplace…</div>
+
+  <script src="../easytrade-topbar.js"></script>
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verification Status: Under Review | EasyTrade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../easytrade-sidebar.css" />
+</head>
+<body>
+  
+  <div class="app et-page">
+    <aside class="et-sidebar" data-et-rail></aside>
+
+    <main class="main">
+      <section class="status-card" aria-labelledby="status-title">
+        <div class="status-card-header">
+          <img src="assets/status-header.png" alt="Document verification illustration" />
+        </div>
+        <div class="status-card-body">
+          <p class="status-badge">Pending Admin Approval</p>
+          <h1 id="status-title">Verification Under Review</h1>
+          <p class="status-text">
+            Our team is currently vetting your business documents. This typically takes
+            <strong>24&ndash;48 business hours</strong>. You will receive an email and a
+            notification once your Verified badge is active.
+          </p>
+          <hr class="divider" />
+          <button data-et="my-products" type="button" class="btn-primary" id="returnDashboard">Return to Dashboard</button>
+          <p class="support-line">
+            Need assistance with your documents?
+            <a href="#" id="contactSupport">Contact Support</a>
+          </p>
+        </div>
+      </section>
+
+      <footer class="page-footer">&copy; 2024 EasyTrade MVP. All rights reserved.</footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../easytrade-sidebar.js"></script>
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

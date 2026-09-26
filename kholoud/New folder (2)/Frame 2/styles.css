@@ -1,0 +1,380 @@
+:root {
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --navy: #1E2A3B;
+  --text: #334155;
+  --muted: #8A97A8;
+  --blue: #2FABE8;
+  --blue-light: #E3F4FD;
+  --blue-bright: #38B6F0;
+  --border: #E5EAF0;
+  --field-bg: #FFFFFF;
+  --box-bg: #F1F5F9;
+  --danger: #E5484D;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --shadow-card: 0 6px 24px rgba(30, 42, 59, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.layout {
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+/* Unified sidebar lives in ../easytrade-sidebar.css */
+
+/* ---------- Main ---------- */
+.main {
+  flex: 1;
+  padding: 48px 56px;
+  max-width: 1024px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+.page-header p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.security-card {
+  margin-top: 32px;
+  padding: 36px 40px 40px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.title-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ---------- Form ---------- */
+form {
+  margin-top: 26px;
+}
+
+.field {
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.field input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--field-bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input::placeholder {
+  color: #A5B1C0;
+}
+
+.field input:focus {
+  border-color: var(--blue-bright);
+  box-shadow: 0 0 0 3px rgba(56, 182, 240, 0.15);
+}
+
+.field input.invalid {
+  border-color: var(--danger);
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap input {
+  padding-right: 72px;
+}
+
+.reveal {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.field-row {
+  display: flex;
+  gap: 24px;
+}
+
+.strength {
+  margin-top: 8px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--box-bg);
+  overflow: hidden;
+}
+
+.strength span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 4px;
+  background: var(--blue);
+  transition: width 0.25s, background 0.25s;
+}
+
+.error {
+  display: none;
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: var(--danger);
+}
+
+.error.show {
+  display: block;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 30px 0;
+}
+
+/* ---------- 2FA ---------- */
+.tfa-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.switch {
+  width: 52px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: #CBD5E1;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s;
+  flex-shrink: 0;
+}
+
+.switch .knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: left 0.25s;
+}
+
+.switch.on {
+  background: var(--blue-bright);
+}
+
+.switch.on .knob {
+  left: 27px;
+}
+
+.email-box {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--box-bg);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin-top: 22px;
+  transition: opacity 0.25s;
+}
+
+.email-box.hidden {
+  display: none;
+}
+
+.email-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.email-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.email-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  border: none;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #4FC3F7, #29ABE2);
+  color: var(--white);
+  font-size: 15px;
+  padding: 16px 32px;
+  box-shadow: 0 8px 20px rgba(41, 171, 226, 0.35);
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 34px;
+}
+
+/* ---------- Devices card ---------- */
+.devices-card {
+  margin-top: 24px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.devices-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.devices-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.devices-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.devices-text {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.link {
+  color: var(--blue);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translate(-50%, 16px);
+  background: var(--navy);
+  color: var(--white);
+  font-size: 14px;
+  padding: 13px 24px;
+  border-radius: var(--radius-pill);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .main {
+    padding: 32px 20px;
+  }
+
+  .field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .devices-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

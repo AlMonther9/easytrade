@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Profile — Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../easytrade-sidebar.css" />
+  <link rel="stylesheet" href="../easytrade-settings-sidebar.css" />
+  <link rel="stylesheet" href="../easytrade-topbar.css" />
+</head>
+<body>
+  <!-- Navbar: shared by every page, built by ../easytrade-topbar.js -->
+  <header id="etTopbar"></header>
+
+  <div class="layout et-page">
+    <aside class="et-settings-sidebar">
+      <p class="et-set-eyebrow">Settings</p>
+
+      <nav class="et-set-nav" aria-label="Settings">
+        <a href="index.html" class="et-set-item is-active" aria-current="page">
+          <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Public Profile</span>
+        </a>
+        <a href="../Frame%202/index.html" class="et-set-item">
+          <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/></svg>
+          <span>Account Security</span>
+        </a>
+        <a href="../KKK/index.html" class="et-set-item">
+          <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 14.5 18 8.5Z"/><path d="M13.7 19.5a2 2 0 0 1-3.4 0"/></svg>
+          <span>Notifications</span>
+        </a>
+      </nav>
+
+      <div class="et-set-help">
+        <p class="et-set-help-title">Need help?</p>
+        <p class="et-set-help-text">Contact our 24/7 dedicated support team for B2B assistance.</p>
+        <a href="#" class="et-set-help-btn">Support Center</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="page-head">
+        <h1>Business Profile</h1>
+        <p>Manage your retail identity and company credentials.</p>
+      </header>
+
+      <form class="card" id="profileForm" novalidate>
+        <!-- Logo row -->
+        <div class="logo-row">
+          <div class="avatar">
+            <svg viewBox="0 0 24 24" class="avatar-icon"><path d="M3 21V3h9v4h9v14H3Zm2-2h5V5H5v14Zm7 0h7V9h-7v10ZM6 9h3v2H6V9Zm0 4h3v2H6v-2Zm8-2h3v2h-3v-2Zm0 4h3v2h-3v-2Z"/></svg>
+            <button type="button" class="avatar-edit" title="Edit logo">
+              <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25ZM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83Z"/></svg>
+            </button>
+          </div>
+          <div class="logo-info">
+            <h2>Store Logo</h2>
+            <p>Upload your professional business mark. Recommended size 400x400px. PNG or JPG only.</p>
+            <div class="logo-actions">
+              <button type="button" class="btn btn-outline-primary" id="uploadLogo">Upload Logo</button>
+              <button type="button" class="btn btn-outline" id="removeLogo">Remove</button>
+              <input type="file" id="logoInput" accept="image/png,image/jpeg" hidden />
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Fields grid -->
+        <div class="grid">
+          <div class="field">
+            <label for="companyName">Store / Company Name</label>
+            <input type="text" id="companyName" value="Elite Retail Solutions" />
+          </div>
+
+          <div class="field">
+            <label for="businessType">Business Type</label>
+            <div class="select-wrap">
+              <select id="businessType">
+                <option>Retailer</option>
+                <option>Wholesaler</option>
+                <option>Distributor</option>
+                <option>Importer</option>
+                <option>Manufacturer</option>
+              </select>
+              <svg viewBox="0 0 24 24" class="chevron"><path d="M7 10l5 5 5-5z"/></svg>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="location">Location / Governorate</label>
+            <div class="input-icon">
+              <svg viewBox="0 0 24 24" class="pin"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+              <input type="text" id="location" value="Muscat, Oman" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="yearEstablished">Year Established</label>
+            <input type="text" id="yearEstablished" value="2015" />
+          </div>
+
+          <div class="field field-full">
+            <label for="description">Short Business Description</label>
+            <textarea id="description" maxlength="500" rows="4">Leading regional importer of electronic consumer goods and household appliances, serving over 500 retail outlets across the GCC. We focus on quality brands and long-term supplier partnerships.</textarea>
+            <span class="char-count"><span id="charNow">0</span> / 500 characters</span>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer">
+          <div class="verified">
+            <svg viewBox="0 0 24 24" class="verified-icon"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1 14-4-4 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6Z"/></svg>
+            <span>Your business is verified as an "Elite Importer"</span>
+          </div>
+          <div class="footer-actions">
+            <button type="button" class="btn-text" id="discardBtn">Discard</button>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Document cards -->
+      <div class="doc-grid">
+        <div class="doc-card">
+          <span class="doc-icon">
+            <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12h8v1.5H8V12Zm0 3h8v1.5H8V15Zm0 3h5v1.5H8V18Z"/></svg>
+          </span>
+          <div class="doc-info">
+            <h3>Tax Identification</h3>
+            <p>Document ending in **4921</p>
+          </div>
+          <a href="#" class="doc-link">Update</a>
+        </div>
+
+        <div class="doc-card">
+          <span class="doc-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm-10-2h4v2h-4V4Zm2 5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm4.5 9h-9v-.75c0-1.5 3-2.3 4.5-2.3s4.5.8 4.5 2.3V18Z"/></svg>
+          </span>
+          <div class="doc-info">
+            <h3>Commercial Register</h3>
+            <p>Valid until 12 Oct 2025</p>
+          </div>
+          <a href="#" class="doc-link">Manage</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../easytrade-topbar.js"></script>
+  <script src="../easytrade-sidebar.js"></script>
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

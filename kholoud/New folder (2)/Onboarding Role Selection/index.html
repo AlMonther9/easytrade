@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyTrade — Onboarding</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="onboarding">
+    <section class="card" aria-labelledby="onboarding-title">
+      <img class="logo" src="assets/logo.png" alt="EasyTrade">
+      <h1 id="onboarding-title" class="title">Welcome to EasyTrade!</h1>
+      <p class="subtitle">How do you plan to use the platform?</p>
+      <p class="hint">You can always switch your role later in settings.</p>
+
+      <div class="roles" role="radiogroup" aria-label="Select your role">
+        <button class="role-card selected" type="button" role="radio" aria-checked="true"
+                data-et="none" data-role="buy" data-label="Retailer">
+          <span class="check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="icon" aria-hidden="true">
+            <img src="assets/icon-buy.png" alt="">
+          </span>
+          <span class="role-title">I want to Buy</span>
+          <span class="role-tag">(Retailer)</span>
+          <span class="role-desc">Source bulk products from verified global suppliers and distributors.</span>
+        </button>
+
+        <button class="role-card" type="button" role="radio" aria-checked="false"
+                data-et="none" data-role="sell" data-label="Importer/Wholesaler">
+          <span class="check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="icon" aria-hidden="true">
+            <img src="assets/icon-sell.png" alt="">
+          </span>
+          <span class="role-title">I want to Sell</span>
+          <span class="role-tag">(Importer/Wholesaler)</span>
+          <span class="role-desc">List your inventory and reach thousands of retail buyers globally.</span>
+        </button>
+      </div>
+
+      <button class="continue-btn" type="button" id="continue-btn">Continue to Dashboard</button>
+
+      <p class="legal">By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+    </section>
+
+    <div class="progress" aria-hidden="true">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

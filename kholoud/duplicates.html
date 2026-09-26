@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyTrade — اختيار النسخ المكررة</title>
+<style>
+  :root { --ink:#101828; --muted:#667085; --line:#e4e7ec; --bg:#f7f8fa; --accent:#175cd3; --warn:#b54708; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:40px 20px; background:var(--bg); color:var(--ink);
+    font:15px/1.7 "Segoe UI", Tahoma, Arial, sans-serif; }
+  .wrap { max-width:860px; margin:0 auto; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  .lead { color:var(--muted); margin:0 0 28px; }
+  .group { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-bottom:18px; }
+  .group h2 { font-size:17px; margin:0 0 4px; }
+  .group p.note { color:var(--muted); font-size:13px; margin:0 0 14px; }
+  .opt { display:flex; gap:14px; align-items:flex-start; padding:14px; border:1px solid var(--line);
+    border-radius:10px; margin-bottom:10px; }
+  .tag { flex:0 0 auto; background:var(--accent); color:#fff; font-weight:700; font-size:12px;
+    padding:3px 9px; border-radius:999px; }
+  .opt .body { flex:1; }
+  .opt strong { display:block; margin-bottom:2px; }
+  .opt small { color:var(--muted); display:block; margin-bottom:8px; }
+  .opt a { color:var(--accent); text-decoration:none; font-weight:600; }
+  .opt a:hover { text-decoration:underline; }
+  .verdict { color:var(--warn); font-size:13px; }
+  footer { color:var(--muted); font-size:13px; margin-top:26px; }
+  footer a { color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>الصفحات المكرّرة — اختار النسخة الأساسية</h1>
+  <p class="lead">كل مجموعة دي فيها أكتر من نسخة لنفس الشاشة. افتح الروابط وقارن، وبعدين اكتبلي الأكواد اللي تختارها (مثلاً: <b>A2، B1، C1، D1، E1</b>) وأنا أربط على اللي اخترته وأمسح الباقي.</p>
+
+  <section class="group">
+    <h2>A — لوحة «My Products» للمورد</h2>
+    <p class="note">نسختين لنفس الشاشة، محتواهم متشابه جداً.</p>
+    <div class="opt">
+      <span class="tag">A1</span>
+      <div class="body">
+        <strong>Supplier My Products Dashboard</strong>
+        <small>9.0 كيلوبايت — فيه فلاتر All/Published/Drafts/Out of Stock وترقيم صفحات.</small>
+        <a href="New%20folder%20(2)/Supplier%20My%20Products%20Dashboard/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="tag">A2</span>
+      <div class="body">
+        <strong>Frame 3</strong>
+        <small>9.2 كيلوبايت — عرض جدولي (Image / Details / Price / Stock / Status / Actions) مع مودال تعديل المنتج.</small>
+        <a href="New%20folder%20(2)/Frame%203/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <p class="verdict">تحديث بعد مراجعة الكود: الاتنين مش مكررين بالظبط — <b>Supplier My Products Dashboard</b> هو داشبورد الكروت، و <b>Frame 3</b> عمله «Inventory List» بجدول واتربط بيه من لينك <code>Inventory</code> في صفحة إضافة منتج. الاختار لسه قائم لو عايز واحدة بس.</p>
+  </section>
+
+  <section class="group">
+    <h2>B — صفحة الملف الشخصي للمورد</h2>
+    <p class="note">تلات نسخ: نسخة سطح مكتب، نسخة موبايل، ونسخة إعدادات/توثيق.</p>
+    <div class="opt">
+      <span class="tag">B1</span>
+      <div class="body">
+        <strong>Supplier Profile</strong>
+        <small>14.4 كيلوبايت — ملف مورد عام (Apex Textiles) بقائمة منتجات وزرار Contact.</small>
+        <a href="New%20folder%20(2)/Supplier%20Profile/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="tag">B2</span>
+      <div class="body">
+        <strong>Supplier Profile — mobile view</strong>
+        <small>5.7 كيلوبايت — نفس B1 بس بمقاس موبايل.</small>
+        <a href="New%20folder%20(2)/Supplier%20Profile%20-%20mobile%20view/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="tag">B3</span>
+      <div class="body">
+        <strong>Group 1 / easytrade — Supplier Profile &amp; Verification</strong>
+        <small>11.1 كيلوبايت — نموذج تحرير بيانات المورد (مش صفحة عرض). الراوتر شايفها «Profile Management».</small>
+        <a href="New%20folder%20(2)/Group%201/easytrade/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <p class="verdict">رأيي: B1 هي صفحة العرض، و B3 صفحة الإعدادات (مش مكرر)، و B2 نسخة موبايل تتشال أو تتساب للمعايرة.</p>
+  </section>
+
+  <section class="group">
+    <h2>C — صفحة «Saved Products»</h2>
+    <p class="note">دي مش مكررة بالظبط: دي نفس الصفحة في حالتين.</p>
+    <div class="opt">
+      <span class="tag">C1</span>
+      <div class="body">
+        <strong>Saved Products (e1e41083)</strong>
+        <small>4.5 كيلوبايت — القائمة فيها منتجات محفوظة.</small>
+        <a href="New%20folder%20(2)/e1e41083/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="tag">C2</span>
+      <div class="body">
+        <strong>Favorites Empty State</strong>
+        <small>5.1 كيلوبايت — نفس الصفحة فاضية وزرار «Browse Marketplace».</small>
+        <a href="New%20folder%20(2)/Favorites%20Empty%20State/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <p class="verdict">رأيي: تربط الاتنين — C1 هي الأساسية و C2 تتوصل لما القائمة فاضية.</p>
+  </section>
+
+  <section class="group">
+    <h2>D — شاشة اختيار الدور (Buyer / Supplier)</h2>
+    <p class="note">شاشتين بيعملوا نفس الخطوة.</p>
+    <div class="opt">
+      <span class="tag">D1</span>
+      <div class="body">
+        <strong>Browse Catalog.html — «Choose Your Role»</strong>
+        <small>في جذع المشروع، و «Create Account» بيوصل لها.</small>
+        <a href="Browse%20Catalog.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="tag">D2</span>
+      <div class="body">
+        <strong>Onboarding Role Selection</strong>
+        <small>نفس الفكرة بتصميم كروت أكبر.</small>
+        <a href="New%20folder%20(2)/Onboarding%20Role%20Selection/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <p class="verdict">رأيي: نخلي D1 في أول الطريق و D2 بعد تسجيل الدخول، أو نحذف واحدة.</p>
+  </section>
+
+  <section class="group">
+    <h2>E — «Product Card» كصفحة مستقلة</h2>
+    <p class="note">الكارت ده بيترسم جوه الماركت بليس تلقائياً، فالملف ده مكرر.</p>
+    <div class="opt">
+      <span class="tag">E1</span>
+      <div class="body">
+        <strong>Product Card (index.html)</strong>
+        <small>2.4 كيلوبايت — عنصر واحد بس، مش شاشة كاملة.</small>
+        <a href="New%20folder%20(2)/Product%20Card/index.html">افتح الصفحة</a>
+      </div>
+    </div>
+    <p class="verdict">رأيي: يتشال من التنقل (مش بيتوصل بيه حاجة).</p>
+  </section>
+
+  <footer>
+    الراوتر المشترك: <code>easytrade-routes.js</code> — أي صفحة تتضاف لاحقاً بتتربط بس بكتابة مسارها في الـ <code>PATHS</code>.
+    <br><a href="index.html">← رجوع للصفحة الرئيسية</a>
+  </footer>
+</div>
+</body>
+</html>

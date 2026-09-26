@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Textiles Co. | EasyTrade</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="EasyTrade home">
+        <img class="brand-img" src="assets/logo.png" alt="EasyTrade">
+      </a>
+
+      <div class="topbar-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="headerSearch" type="search" placeholder="Search products..." aria-label="Search products">
+      </div>
+
+      <nav class="topnav" aria-label="Primary">
+        <a href="../Marketplace%20After%20Get%20Started/index.html" class="active">Marketplace</a>
+        <a href="../B2B%20Negotiation%20Inbox/index.html">Messages</a>
+      </nav>
+
+      <div class="role-switch" id="roleSwitch" role="group" aria-label="Account type">
+        <button type="button" data-role="buyer" aria-pressed="false">Buyer</button>
+        <button type="button" class="active" data-role="supplier" aria-pressed="true">Supplier</button>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="icon-btn" id="wishlistBtn" type="button" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </button>
+        <button class="icon-btn" id="notifBtn" type="button" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        </button>
+        <button class="avatar-btn" type="button" aria-label="Account"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Supplier profile -->
+    <section class="profile-card">
+      <div class="cover"></div>
+      <div class="profile-body">
+        <div class="profile-head">
+          <img class="profile-avatar" src="assets/supplier-avatar.png" alt="Apex Textiles Co. logo" />
+          <div class="profile-id">
+            <div class="name-row">
+              <h1>Apex Textiles Co.</h1>
+              <span class="badge-importer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c2.6 2.6 3.9 5.7 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.7-3.9-9S9.4 5.6 12 3Z" /></svg>
+                Verified Importer
+              </span>
+            </div>
+            <div class="location">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" /><circle cx="12" cy="10" r="2.6" /></svg>
+              Cairo, Egypt
+            </div>
+          </div>
+          <button class="btn-primary btn-contact-head" type="button" data-contact="Contact request sent to Apex Textiles Co.">Contact Supplier</button>
+        </div>
+        <p class="profile-desc">Professional textile manufacturing and wholesale distribution specializing in high-quality organic cotton fabrics, industrial textiles, and premium linen. Serving major retailers across the MENA region since 2022 with a commitment to sustainable sourcing.</p>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stat-card">
+        <div class="stat-label">AVG. RESPONSE RATE</div>
+        <div class="stat-value">98% <span class="stat-note green">~Top Tier</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">MEMBER SINCE</div>
+        <div class="stat-value">2022</div>
+        <div class="stat-sub">Trusted for 2+ years</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">TOTAL PRODUCTS</div>
+        <div class="stat-value">45 <span class="stat-unit">Listed</span></div>
+        <div class="stat-sub">Across 4 categories</div>
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="catalog">
+      <div class="catalog-head">
+        <h2>Product Catalog</h2>
+        <div class="filter-wrap" id="filterWrap">
+          <button class="btn-filter" id="filterBtn" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16l-6.2 7.2v5.3L10.2 20v-7.8L4 5Z" /></svg>
+            Filter
+          </button>
+          <div class="filter-panel" id="filterPanel">
+            <div class="filter-group">
+              <h4>Category</h4>
+              <label class="filter-option"><input type="checkbox" value="electronics" /> Electronics</label>
+              <label class="filter-option"><input type="checkbox" value="furniture" /> Furniture</label>
+            </div>
+            <div class="filter-group">
+              <h4>Offer</h4>
+              <label class="filter-option"><input type="checkbox" value="wholesale" /> Wholesale</label>
+              <label class="filter-option"><input type="checkbox" value="sample" /> Sample ready</label>
+              <label class="filter-option"><input type="checkbox" value="hot" /> Hot deal</label>
+            </div>
+            <button class="filter-clear" id="clearFilters" type="button">Clear all filters</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog-sub">
+        <p class="count">Showing <b>128</b> products</p>
+        <div class="view-toggle">
+          <button class="view-btn active" type="button" data-view="grid" aria-label="Grid view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5" /><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" /><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" /><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5" /></svg>
+          </button>
+          <button class="view-btn" type="button" data-view="list" aria-label="List view">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6.5h16" /><path d="M4 12h16" /><path d="M4 17.5h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+
+        <article class="product-card" data-tags="electronics wholesale">
+          <div class="product-media">
+            <img src="assets/product-1.png" alt="Pro-Audio Wireless Studio Headphones" />
+            <span class="tag tag-wholesale">WHOLESALE</span>
+            <button class="fav" type="button" aria-label="Save to favorites">
+              <svg class="ic-heart" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20.5C6.5 16.9 3.5 13.8 3.5 10.3 3.5 7.7 5.5 5.7 8 5.7c1.6 0 3.1.8 4 2.1.9-1.3 2.4-2.1 4-2.1 2.5 0 4.5 2 4.5 4.6 0 3.5-3 6.6-8.5 10.2Z" /></svg>
+              <svg class="ic-heart-fill" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.5C6.5 16.9 3.5 13.8 3.5 10.3 3.5 7.7 5.5 5.7 8 5.7c1.6 0 3.1.8 4 2.1.9-1.3 2.4-2.1 4-2.1 2.5 0 4.5 2 4.5 4.6 0 3.5-3 6.6-8.5 10.2Z" /></svg>
+            </button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Pro-Audio Wireless Studio Headphones</h3>
+            <div class="product-price">$45.50 <span class="per">/ unit</span> <span class="moq">(Min. 50 units)</span></div>
+            <div class="supplier-row">
+              <div class="supplier-id">
+                <img class="supplier-avatar" src="assets/supplier-a.jpg" alt="UrbanNest Imports" />
+                <div>
+                  <div class="supplier-name">UrbanNest Imports</div>
+                  <span class="badge-mini verified">VERIFIED</span>
+                </div>
+              </div>
+              <div class="supplier-meta">
+                <div><span class="m-label">RESPONSE</span><span class="m-value">98%</span></div>
+                <div><span class="m-label">LOCATION</span><span class="m-value">Cairo</span></div>
+              </div>
+            </div>
+            <button class="btn-primary" type="button" data-contact="Contact request sent to UrbanNest Imports.">Contact Supplier</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-tags="furniture sample">
+          <div class="product-media">
+            <img src="assets/product-2.png" alt="Nordic Minimalist Ergonomic Chair" />
+            <span class="tag tag-sample">SAMPLE READY</span>
+            <button class="fav" type="button" aria-label="Save to favorites">
+              <svg class="ic-heart" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20.5C6.5 16.9 3.5 13.8 3.5 10.3 3.5 7.7 5.5 5.7 8 5.7c1.6 0 3.1.8 4 2.1.9-1.3 2.4-2.1 4-2.1 2.5 0 4.5 2 4.5 4.6 0 3.5-3 6.6-8.5 10.2Z" /></svg>
+              <svg class="ic-heart-fill" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.5C6.5 16.9 3.5 13.8 3.5 10.3 3.5 7.7 5.5 5.7 8 5.7c1.6 0 3.1.8 4 2.1.9-1.3 2.4-2.1 4-2.1 2.5 0 4.5 2 4.5 4.6 0 3.5-3 6.6-8.5 10.2Z" /></svg>
+            </button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Nordic Minimalist Ergonomic Chair</h3>
+            <div class="product-price">$89.00 <span class="per">/ unit</span> <span class="moq">(Min. 20 units)</span></div>
+            <div class="supplier-row">
+              <div class="supplier-id">
+                <img class="supplier-avatar" src="assets/supplier-b.jpg" alt="UrbanNest Imports" />
+                <div>
+                  <div class="supplier-name">UrbanNest Imports</div>
+                  <span class="badge-mini verified">VERIFIED</span>
+                </div>
+              </div>
+              <div class="supplier-meta">
+                <div><span class="m-label">RESPONSE</span><span class="m-value">98%</span></div>
+                <div><span class="m-label">LOCATION</span><span class="m-value">Cairo</span></div>
+              </div>
+            </div>
+            <button class="btn-primary" type="button" data-contact="Contact request sent to UrbanNest Imports.">Contact Supplier</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-tags="electronics hot">
+          <div class="product-media">
+            <img src="assets/product-3.png" alt="Elite Series 4 Smart Watch Pro" />
+            <span class="tag tag-hot">HOT DEAL</span>
+            <button class="fav active" type="button" aria-label="Remove from favorites">
+              <svg class="ic-heart" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20.5C6.5 16.9 3.5 13.8 3.5 10.3 3.5 7.7 5.5 5.7 8 5.7c1.6 0 3.1.8 4 2.1.9-1.3 2.4-2.1 4-2.1 2.5 0 4.5 2 4.5 4.6 0 3.5-3 6.6-8.5 10.2Z" /></svg>
+              <svg class="ic-heart-fill" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.5C6.5 16.9 3.5 13.8 3.5 10.3 3.5 7.7 5.5 5.7 8 5.7c1.6 0 3.1.8 4 2.1.9-1.3 2.4-2.1 4-2.1 2.5 0 4.5 2 4.5 4.6 0 3.5-3 6.6-8.5 10.2Z" /></svg>
+            </button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">Elite Series 4 Smart Watch Pro</h3>
+            <div class="product-price">$12.20 <span class="per">/ unit</span> <span class="moq">(Min. 200 units)</span></div>
+            <div class="supplier-row">
+              <div class="supplier-id">
+                <img class="supplier-avatar" src="assets/supplier-a.jpg" alt="Precision Manuf." />
+                <div>
+                  <div class="supplier-name">Precision Manuf.</div>
+                  <span class="badge-mini standard">STANDARD</span>
+                </div>
+              </div>
+              <div class="supplier-meta">
+                <div><span class="m-label">RESPONSE</span><span class="m-value">98%</span></div>
+                <div><span class="m-label">LOCATION</span><span class="m-value">Cairo</span></div>
+              </div>
+            </div>
+            <button class="btn-primary" type="button" data-contact="Contact request sent to Precision Manuf.">Contact Supplier</button>
+          </div>
+        </article>
+
+        <p class="empty-state" id="emptyState">No products match the selected filters.</p>
+      </div>
+
+      <div class="pagination">
+        <button class="page-arrow" type="button" aria-label="Previous page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6" /></svg>
+        </button>
+        <button class="page active" type="button">1</button>
+        <button class="page" type="button">2</button>
+        <button class="page" type="button">3</button>
+        <span class="page-dots">&hellip;</span>
+        <button class="page" type="button">12</button>
+        <button class="page-arrow" type="button" aria-label="Next page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6" /></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <button class="btn-primary btn-block" type="button" data-contact="Contact request sent to Apex Textiles Co.">Contact Apex Textiles Co.</button>
+      <p class="cta-note">Looking for custom manufacturing requirements?</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">&copy; 2024 EasyTrade B2B Marketplace. All rights reserved.</footer>
+
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

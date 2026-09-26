@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#2BB3EE" />
+<title>Apex Textiles Co. — Supplier Profile | EasyTrade B2B</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="../Marketplace%20After%20Get%20Started/index.html" aria-label="EasyTrade home">
+      <img src="assets/logo-brand.png" alt="" />
+    </a>
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="searchInput" type="search" placeholder="Search products or suppliers..." autocomplete="off" />
+    </label>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="favBtn" type="button" aria-label="Favorites">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      </button>
+      <button class="icon-btn" id="alertBtn" type="button" aria-label="Notifications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        <span class="dot" id="alertDot"></span>
+      </button>
+      <button class="icon-btn" type="button" aria-label="Messages">
+        <img src="assets/icon-mail.png" alt="" />
+      </button>
+      <button class="avatar" type="button" aria-label="Account">
+        <img src="assets/avatar.png" alt="" />
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card hero">
+      <div class="hero-banner"></div>
+      <div class="hero-body">
+        <img class="hero-logo" src="assets/logo-circle.png" alt="Apex Textiles Co. logo" />
+        <h1>Apex Textiles Co.</h1>
+        <div class="hero-meta">
+          <img class="badge" src="assets/badge-verified.png" alt="Verified Importer" />
+          <span class="loc">
+            <img src="assets/icon-pin.png" alt="" />
+            Cairo, Egypt
+          </span>
+        </div>
+        <button class="btn btn-primary btn-block" type="button" data-contact>Contact Supplier</button>
+        <p class="hero-desc">Professional textile manufacturing and wholesale distribution specializing in high-quality organic cotton fabrics, industrial textiles, and premium linen. Serving major retailers across the MENA region since 2022 with a commitment to sustainable sourcing.</p>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Supplier statistics">
+      <div class="card stat">
+        <span class="stat-label">Avg. Response Rate</span>
+        <div class="stat-value">
+          <span><span data-count="98">98</span>%</span>
+          <span class="stat-tag">
+            <img src="assets/icon-trend.png" alt="" />
+            Top Tier
+          </span>
+        </div>
+      </div>
+      <div class="card stat">
+        <span class="stat-label">Member Since</span>
+        <div class="stat-value">2022</div>
+        <span class="stat-sub">Trusted for 3+ years</span>
+      </div>
+      <div class="card stat">
+        <span class="stat-label">Total Products</span>
+        <div class="stat-value"><span data-count="45">45</span>&nbsp;Listed</div>
+        <span class="stat-sub">Across 4 categories</span>
+      </div>
+    </section>
+
+    <section class="catalog" aria-label="Product catalog">
+      <div class="catalog-head">
+        <h2>Product Catalog</h2>
+        <div class="filter-wrap">
+          <button class="filter-btn" id="filterBtn" type="button" aria-expanded="false" aria-controls="filterMenu">
+            <img src="assets/icon-filter.png" alt="" />
+            <span id="filterLabel">Filter</span>
+          </button>
+          <div class="filter-menu" id="filterMenu" role="menu" hidden></div>
+        </div>
+      </div>
+      <div class="products" id="productList"></div>
+      <p class="empty" id="emptyState" hidden>No products match your search.</p>
+    </section>
+
+    <section class="cta">
+      <p>Looking for custom manufacturing requirements?</p>
+      <button class="btn btn-primary btn-block" type="button" data-contact>Contact Apex Textiles Co.</button>
+    </section>
+  </main>
+
+  <footer>&copy; 2024 EasyTrade B2B Marketplace. All rights reserved.</footer>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <h3 id="modalTitle">Contact Apex Textiles Co.</h3>
+    <p class="modal-sub">Send an inquiry — the supplier typically responds within 24 hours.</p>
+    <form id="contactForm">
+      <label>Your name
+        <input name="name" type="text" placeholder="Full name" required />
+      </label>
+      <label>Message
+        <textarea name="message" rows="4" placeholder="Describe your requirements..." required></textarea>
+      </label>
+      <button class="btn btn-primary btn-block" type="submit">Send Inquiry</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

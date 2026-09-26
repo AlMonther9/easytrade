@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyTrade — Product Published Successfully</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="../Marketplace%20After%20Get%20Started/index.html" aria-label="EasyTrade home">
+      <img src="assets/logo-easytrade.png" alt="EasyTrade">
+    </a>
+
+    <div class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+      </svg>
+      <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products" autocomplete="off">
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#" class="nav-link is-active">Marketplace</a>
+      <a href="#" class="nav-link">Messages</a>
+    </nav>
+
+    <div class="role-toggle" data-active="buyer" role="group" aria-label="Account role">
+      <button type="button" class="role is-active" data-role="buyer">Buyer</button>
+      <button type="button" class="role" data-role="supplier">Supplier</button>
+    </div>
+
+    <div class="top-actions">
+      <button type="button" class="icon-btn" id="wishlistBtn" aria-label="Wishlist" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </button>
+      <button type="button" class="icon-btn" id="bellBtn" aria-label="Notifications">
+        <img src="assets/icon-bell.png" alt="">
+      </button>
+      <button type="button" class="avatar" id="avatarBtn" aria-label="Your account"></button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="success-card" aria-labelledby="successTitle">
+      <div class="card-hero">
+        <img src="assets/hero-success.png" id="heroArt" alt="">
+      </div>
+
+      <div class="card-body">
+        <img class="badge-live" src="assets/badge-live-now.png" alt="Live now">
+
+        <h1 id="successTitle">Product Published Successfully!</h1>
+
+        <p>Your product is now live and visible to buyers across the platform.
+           Wholesale and retail partners can now place orders immediately.</p>
+
+        <div class="quick-actions">
+          <button type="button" class="quick-card" data-toast="Opening your live product page…">
+            <img src="assets/icon-view.png" alt="">
+            <span>View Live<br>Product</span>
+          </button>
+          <button type="button" class="quick-card" data-toast="Starting a new product draft…">
+            <img src="assets/icon-add.png" alt="">
+            <span>Add Another<br>Product</span>
+          </button>
+        </div>
+
+        <button type="button" class="cta" id="ctaDashboard" data-toast="Taking you to your dashboard…">
+          Go to Dashboard
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="4" y1="12" x2="19" y2="12"></line>
+            <polyline points="13 6 19 12 13 18"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 B2B Connect Marketplace. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#">Support Center</a>
+      <a href="#">Seller Policy</a>
+      <a href="#">Analytics Guide</a>
+    </nav>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

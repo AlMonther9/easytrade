@@ -1,0 +1,162 @@
+/* =========================================================
+   EasyTrade — Settings sidebar (Public Profile / Account
+   Security / Notifications). Shared by:
+   Buyer Personal Profile, Frame 2, KKK.
+   ========================================================= */
+
+.et-settings-sidebar {
+  --et-set-blue: #29abe9;
+  --et-set-blue-deep: #1e93cb;
+  --et-set-tint: #e9f6fd;
+  --et-set-ink: #33474f;
+  --et-set-faint: #9aaab2;
+
+  position: fixed;
+  top: 64px; /* sits under the shared 64px EasyTrade topbar */
+  left: 0;
+  bottom: 0;
+  width: 252px;
+  background: #ffffff;
+  border-right: 1px solid #eceff1;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px 24px;
+  overflow-y: auto;
+  z-index: 60;
+  font-family: "Inter", "Poppins", system-ui, -apple-system, sans-serif;
+}
+
+.et-settings-sidebar *,
+.et-settings-sidebar *::before,
+.et-settings-sidebar *::after {
+  box-sizing: border-box;
+}
+
+.et-set-eyebrow {
+  margin: 0 0 18px;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--et-set-faint);
+}
+
+.et-set-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.et-set-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--et-set-ink);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.et-set-item:hover {
+  background: #f2f5f7;
+}
+
+.et-set-item:focus-visible {
+  outline: 2px solid var(--et-set-blue);
+  outline-offset: 2px;
+}
+
+.et-set-item.is-active {
+  background: var(--et-set-tint);
+  color: var(--et-set-blue);
+  font-weight: 600;
+}
+
+.et-set-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Contextual help card pinned to the bottom */
+.et-set-help {
+  margin-top: auto;
+  padding: 22px 20px;
+  border: 1px solid #d8ecf7;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f4fbfe 0%, #eaf6fc 100%);
+}
+
+.et-set-help-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--et-set-blue);
+}
+
+.et-set-help-text {
+  margin: 0 0 18px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #6b7f88;
+}
+
+.et-set-help-btn {
+  display: block;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #45b6ef 0%, var(--et-set-blue-deep) 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(41, 171, 233, 0.35);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.et-set-help-btn:hover {
+  filter: brightness(1.05);
+}
+
+.et-set-help-btn:active {
+  transform: translateY(1px);
+}
+
+/* Content shift: reuses the .et-page padding from easytrade-sidebar.css */
+.et-settings-sidebar ~ .main,
+.et-settings-sidebar ~ .content {
+  padding-left: 0;
+}
+
+@media (max-width: 860px) {
+  .et-settings-sidebar {
+    width: 76px;
+    padding: 20px 10px 16px;
+    align-items: center;
+  }
+
+  .et-set-eyebrow,
+  .et-set-item span,
+  .et-set-help {
+    display: none;
+  }
+
+  .et-set-item {
+    justify-content: center;
+    padding: 12px;
+  }
+}

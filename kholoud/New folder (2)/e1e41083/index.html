@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Products | EasyTrade Wholesale Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-head">
+      <div class="page-head__text">
+        <h1>Saved Products</h1>
+        <p class="item-count" id="itemCount">Showing 128 items</p>
+      </div>
+      <div class="view-toggle" role="group" aria-label="View mode">
+        <button type="button" id="gridViewBtn" class="toggle-btn is-active" aria-label="Grid view" aria-pressed="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="10" y="1" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="1" y="10" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="10" y="10" width="7" height="7" rx="1.5" fill="currentColor"/>
+          </svg>
+        </button>
+        <button type="button" id="listViewBtn" class="toggle-btn" aria-label="List view" aria-pressed="false">
+          <img src="images/icon-list.png" alt="">
+        </button>
+      </div>
+    </header>
+
+    <section id="productGrid" class="product-grid" aria-label="Saved products"></section>
+
+    <div id="emptyState" class="empty-state" hidden>
+      <div class="empty-state__icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <h2>No saved products yet</h2>
+      <p>Browse the marketplace and tap the heart on any product to keep it here.</p>
+    </div>
+
+    <nav id="pagination" class="pagination" aria-label="Pagination"></nav>
+
+    <section class="features" aria-label="Feature highlights">
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/>
+          </svg>
+        </div>
+        <h3>Quick Access</h3>
+        <p>Jump back to products you're interested in without searching again.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><img src="images/icon-bell.png" alt=""></div>
+        <h3>Price Alerts</h3>
+        <p>Get notified when your favorite items go on sale or restock.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><img src="images/icon-compare.png" alt=""></div>
+        <h3>Easy Comparison</h3>
+        <p>Keep potential inventory together to compare prices and specs.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-logo" src="images/logo.png" alt="EasyTrade" width="150">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Support</a>
+      <a href="#">About Us</a>
+    </nav>
+    <div class="footer-social">
+      <a href="#" class="social-btn" aria-label="LinkedIn"><img src="images/linkedin.png" alt=""></a>
+      <a href="#" class="social-btn" aria-label="Twitter">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23 4.9c-.8.4-1.7.6-2.6.8a4.5 4.5 0 0 0 2-2.5c-.9.5-1.9.9-2.9 1.1a4.5 4.5 0 0 0-7.7 4.1A12.8 12.8 0 0 1 2.5 3.7a4.5 4.5 0 0 0 1.4 6 4.4 4.4 0 0 1-2-.6v.1a4.5 4.5 0 0 0 3.6 4.4 4.6 4.6 0 0 1-2 .1 4.5 4.5 0 0 0 4.2 3.1A9 9 0 0 1 1 18.6a12.7 12.7 0 0 0 6.9 2c8.3 0 12.8-6.8 12.8-12.8v-.6A9.3 9.3 0 0 0 23 4.9z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="copyright">&copy; 2024 EasyTrade Wholesale Marketplace. All rights reserved.</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

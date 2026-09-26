@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Cotton T-Shirts - Bulk | EasyTrade MVP</title>
+  <link rel="icon" type="image/png" href="assets/logo-easytrade.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="#">Home</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <a href="#">Apparel &amp; Textiles</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      <span aria-current="page">Premium Cotton T-Shirts</span>
+    </nav>
+
+    <section class="product">
+      <div class="gallery">
+        <div class="media" id="media" data-variant="blue" role="img" aria-label="Premium cotton t-shirt product visual"></div>
+        <div class="thumbs" role="tablist" aria-label="Product views">
+          <button class="thumb thumb--blue is-active" role="tab" aria-selected="true" data-variant="blue" aria-label="Product view 1">
+            <span class="thumb__shape"></span>
+          </button>
+          <button class="thumb thumb--purple" role="tab" aria-selected="false" tabindex="-1" data-variant="purple" aria-label="Product view 2">
+            <span class="thumb__shape"></span>
+          </button>
+          <button class="thumb thumb--green" role="tab" aria-selected="false" tabindex="-1" data-variant="green" aria-label="Product view 3">
+            <span class="thumb__shape"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="info">
+        <span class="pill pill--category">Apparel &amp; Textiles</span>
+        <h1>Premium Cotton T-Shirts - Bulk</h1>
+        <p class="price"><strong>EGP 120.00</strong><span>/ piece</span></p>
+
+        <aside class="supplier-card">
+          <div class="supplier">
+            <img class="supplier__avatar" src="assets/supplier-avatar.png" alt="Apex Textiles Co. logo">
+            <div>
+              <p class="supplier__name">
+                Apex Textiles Co.
+                <span class="pill pill--verified">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.2 2.4 2.4 4.6-5.2"/></svg>
+                  Verified
+                </span>
+              </p>
+              <p class="supplier__meta">Cairo, Egypt &middot; Since 2012</p>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--block" id="inquiryBtn">Send Inquiry to Supplier</button>
+          <a class="supplier-link" href="#">View Supplier Profile</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="specs" aria-labelledby="specsTitle">
+      <header class="specs__header">
+        <h2 id="specsTitle">Product Specifications</h2>
+      </header>
+      <div class="specs__body">
+        <h3>Product Overview</h3>
+        <p class="specs__text">
+          High-quality 100% Egyptian cotton t-shirts designed for retail resale and custom branding. These
+          shirts feature double-needle stitching on sleeves and bottom hem for extra durability.
+          Breathable, pre-shrunk fabric ensures long-lasting fit and comfort.
+        </p>
+        <div class="specs__grid">
+          <div class="spec-row">
+            <span class="spec-label">Minimum Order</span>
+            <span class="spec-value">100 pieces</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Material</span>
+            <span class="spec-value">100% Combed Cotton</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Packaging</span>
+            <span class="spec-value">Individual Polybag / Master Carton</span>
+          </div>
+          <div class="spec-row spec-row--empty" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a class="footer__brand" href="../Marketplace%20After%20Get%20Started/index.html">
+        <img class="footer__logo" src="assets/logo-easytrade.png" alt="EasyTrade">
+        <span class="footer__mvp">MVP</span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#">Help Center</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+      </nav>
+      <p class="footer__copy">&copy; 2024 EasyTrade MVP. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card">
+      <button class="modal__close" type="button" data-close aria-label="Close dialog">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="modal__formview">
+        <h2 id="modalTitle">Send Inquiry</h2>
+        <p class="modal__sub">Apex Textiles Co. typically responds within 24 hours.</p>
+        <form id="inquiryForm" novalidate>
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" name="name" placeholder="Your name" autocomplete="name">
+            <small class="error"></small>
+          </label>
+          <label class="field">
+            <span>Work email</span>
+            <input type="email" name="email" placeholder="you@company.com" autocomplete="email">
+            <small class="error"></small>
+          </label>
+          <label class="field">
+            <span>Quantity (pieces)</span>
+            <input type="number" name="quantity" value="100" min="100" step="10">
+            <small class="error"></small>
+          </label>
+          <label class="field">
+            <span>Message <em>(optional)</em></span>
+            <textarea name="message" placeholder="Sizes, colors, branding requirements..."></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary btn--block">Send Inquiry</button>
+        </form>
+      </div>
+
+      <div class="modal__success" hidden>
+        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+          <circle cx="28" cy="28" r="28" fill="#D9F3EB"/>
+          <path d="M18 28.5 25 35l13-14" stroke="#0EB5A0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h2>Inquiry sent</h2>
+        <p>Your inquiry has been sent to Apex Textiles Co.<br>You will receive a reply at your email address.</p>
+        <button type="button" class="btn btn--primary btn--block" data-close>Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

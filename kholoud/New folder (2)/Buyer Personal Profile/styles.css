@@ -1,0 +1,237 @@
+:root {
+  --primary: #38bdf8;
+  --primary-strong: #0ea5e9;
+  --ink: #0f172a;
+  --ink-soft: #1e293b;
+  --muted: #64748b;
+  --muted-light: #94a3b8;
+  --border: #e2e8f0;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --sky-tint: #e0f2fe;
+  --success: #22c55e;
+  --shadow: 0 1px 3px rgba(15, 23, 42, .06), 0 10px 30px rgba(15, 23, 42, .04);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The navbar it used to reserve space for is now the shared ../easytrade-topbar.css bar */
+.layout {
+  min-height: calc(100vh - 64px);
+}
+
+/* Sidebar styles live in ../easytrade-sidebar.css */
+
+/* Main */
+.main {
+  padding: 44px 56px;
+  max-width: 1180px;
+}
+
+.page-head h1 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.page-head p { color: var(--muted); margin-top: 6px; font-size: 15px; }
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 34px 40px;
+  margin-top: 26px;
+  box-shadow: var(--shadow);
+}
+
+.logo-row { display: flex; gap: 28px; align-items: flex-start; }
+
+.avatar {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #e2e8f0, #dbe3ec);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.avatar-icon { width: 46px; height: 46px; fill: #94a3b8; }
+
+.avatar-edit {
+  position: absolute;
+  right: 4px;
+  bottom: 6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--primary);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.avatar-edit svg { width: 15px; height: 15px; fill: #fff; }
+
+.logo-info h2 { font-size: 21px; font-weight: 700; color: var(--ink); }
+.logo-info p { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 8px 0 16px; max-width: 340px; }
+
+.logo-actions { display: flex; gap: 12px; }
+
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .15s;
+}
+.btn-outline-primary { background: #fff; border-color: var(--primary); color: var(--primary-strong); }
+.btn-outline-primary:hover { background: var(--sky-tint); }
+.btn-outline { background: #fff; border-color: var(--border); color: var(--muted); }
+.btn-outline:hover { background: #f8fafc; }
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 13px 30px;
+  box-shadow: 0 8px 18px rgba(56, 189, 248, .4);
+}
+.btn-primary:hover { background: var(--primary-strong); }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 30px 0; }
+
+/* Grid fields */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 40px;
+}
+
+.field { display: flex; flex-direction: column; }
+.field-full { grid-column: 1 / -1; }
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 9px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: #fff;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  width: 100%;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, .15);
+}
+
+.field input::placeholder, .field textarea::placeholder { color: var(--muted-light); }
+
+.select-wrap { position: relative; }
+.select-wrap select { appearance: none; padding-right: 44px; cursor: pointer; }
+.chevron { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; fill: var(--muted); pointer-events: none; }
+
+.input-icon { position: relative; }
+.input-icon .pin { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; fill: var(--muted-light); }
+.input-icon input { padding-left: 44px; }
+
+.field textarea { resize: vertical; line-height: 1.6; min-height: 120px; }
+
+.char-count { align-self: flex-end; font-size: 12px; color: var(--muted-light); margin-top: 8px; }
+
+/* Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 34px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.verified { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.verified-icon { width: 18px; height: 18px; fill: var(--success); }
+
+.footer-actions { display: flex; align-items: center; gap: 22px; }
+
+.btn-text {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.btn-text:hover { color: var(--ink); }
+
+/* Doc cards */
+.doc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.doc-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow);
+}
+
+.doc-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--sky-tint);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.doc-icon svg { width: 22px; height: 22px; fill: var(--primary-strong); }
+
+.doc-info { flex: 1; }
+.doc-info h3 { font-size: 15px; font-weight: 700; color: var(--ink); }
+.doc-info p { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+.doc-link { color: var(--primary-strong); font-weight: 600; font-size: 14px; text-decoration: none; }
+.doc-link:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main { padding: 28px 20px; }
+  .card { padding: 24px; }
+  .grid, .doc-grid { grid-template-columns: 1fr; }
+  .logo-row { flex-direction: column; align-items: center; text-align: center; }
+  .logo-info p { margin-inline: auto; }
+}

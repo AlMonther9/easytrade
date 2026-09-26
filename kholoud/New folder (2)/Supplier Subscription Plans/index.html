@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Plans — EasyTrade Supplier</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../easytrade-sidebar.css">
+  <link rel="stylesheet" href="../easytrade-topbar.css">
+</head>
+<body>
+
+  <!-- Navbar: shared by every page, built by ../easytrade-topbar.js -->
+  <header id="etTopbar"></header>
+
+  <div class="app et-page">
+
+   
+    <aside class="et-sidebar" data-et-rail></aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+      <header class="main__header">
+        <h1 class="main__title">Choose Your Growth Plan</h1>
+        <p class="main__subtitle">
+          Unlock exclusive B2B features and scale your wholesale distribution with<br>
+          our tailored supplier plans.
+        </p>
+      </header>
+
+      <section class="plans" aria-label="Subscription plans">
+
+        <!-- Starter -->
+        <article class="plan" data-plan="starter">
+          <h2 class="plan__name">Starter</h2>
+          <p class="plan__price">
+            <span class="plan__amount">$0</span>
+            <span class="plan__period">/month</span>
+          </p>
+          <button class="plan__btn" type="button" data-action="stay-free">Stay on Free</button>
+          <ul class="plan__features">
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>5 product listings</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Standard messaging</span>
+            </li>
+            <li class="plan__feature plan__feature--off">
+              <img src="assets/icon-cross.png" alt="">
+              <span>Priority search ranking</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Professional -->
+        <article class="plan plan--featured" data-plan="professional">
+          <span class="plan__badge">BEST VALUE</span>
+          <h2 class="plan__name">Professional</h2>
+          <p class="plan__price">
+            <span class="plan__amount">$49</span>
+            <span class="plan__period">/month</span>
+          </p>
+          <button class="plan__btn plan__btn--primary" type="button" data-action="upgrade">Upgrade Now</button>
+          <ul class="plan__features">
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Unlimited listings</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Verified Badge (after vetting)</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Priority in search results</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Advanced analytics dashboard</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Enterprise -->
+        <article class="plan" data-plan="enterprise">
+          <h2 class="plan__name">Enterprise</h2>
+          <p class="plan__price">
+            <span class="plan__amount">Custom</span>
+            <span class="plan__period">pricing</span>
+          </p>
+          <button class="plan__btn" type="button" data-action="contact-sales">Contact Sales</button>
+          <ul class="plan__features">
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Dedicated account manager</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Full API access</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Bulk import tools</span>
+            </li>
+            <li class="plan__feature plan__feature--on">
+              <img src="assets/icon-check.png" alt="">
+              <span>Custom legal contracts</span>
+            </li>
+          </ul>
+        </article>
+
+      </section>
+
+      <p class="help">
+        Need help choosing?
+        <a href="#" id="supportLink">Contact our support team</a>
+      </p>
+
+      <footer class="footer">
+        <div class="footer__item">
+          <img src="assets/icon-shield.png" alt="">
+          <span>Secure Payments</span>
+        </div>
+        <div class="footer__item">
+          <img src="assets/icon-clock.png" alt="">
+          <span>Cancel Anytime</span>
+        </div>
+        <div class="footer__item">
+          <img src="assets/icon-help.png" alt="">
+          <span>24/7 Support</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ============ CONFIRM MODAL ============ -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card">
+      <button class="modal__close" type="button" data-close aria-label="Close dialog">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="modal__title" id="modalTitle">Confirm change</h3>
+      <p class="modal__text" id="modalText"></p>
+      <div class="modal__actions">
+        <button class="modal__btn modal__btn--ghost" type="button" data-close>Cancel</button>
+        <button data-et="checkout" class="modal__btn modal__btn--primary" type="button" id="modalConfirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../easytrade-topbar.js"></script>
+  <script src="../easytrade-sidebar.js"></script>
+  <script src="js/script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

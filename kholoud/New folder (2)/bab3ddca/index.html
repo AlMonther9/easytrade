@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boost Product — Select a Product</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay" id="overlay">
+
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button data-et="boosts" class="modal__close" id="close-btn" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <header class="modal__header">
+        <h1 id="modal-title">Select a Product</h1>
+        <p class="modal__step">Step 1: Choose the item to pin to the top of its category.</p>
+      </header>
+
+      <div class="search">
+        <svg class="search__icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.8" />
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+        <input type="text" id="search-input" placeholder="Search active inventory..." aria-label="Search active inventory" />
+      </div>
+
+      <ul class="products" id="product-list"></ul>
+
+      <p class="products__empty" id="empty-state" hidden>No products match your search.</p>
+
+      <footer class="modal__footer">
+        <div class="deal">
+          <div class="deal__item">
+            <span class="deal__label">Hot Deal Price</span>
+            <span class="deal__value">EGP 250 <em>/ week</em></span>
+          </div>
+          <div class="deal__divider"></div>
+          <div class="deal__item deal__item--right">
+            <span class="deal__label">Duration</span>
+            <span class="deal__value">7 days</span>
+          </div>
+        </div>
+        <button data-et="boost-config" class="btn-continue" id="continue-btn">
+          Continue to Boost Details
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9h11M10 4.5L14.5 9 10 13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </footer>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

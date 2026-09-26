@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyTrade — My Products</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../easytrade-sidebar.css" />
+  <link rel="stylesheet" href="../easytrade-page-nav.css" />
+</head>
+<body>
+  <div class="app et-page">
+    <!-- ===== Top bar ===== -->
+    <header class="topbar">
+      <a class="brand" href="../Marketplace%20After%20Get%20Started/index.html">
+        <img src="assets/logo.png" alt="EasyTrade" class="brand-logo" />
+      </a>
+
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" />
+      </div>
+
+      <nav class="topnav">
+        <a href="../Marketplace%20After%20Get%20Started/index.html" class="topnav-link active">Marketplace</a>
+        <a href="../B2B%20Negotiation%20Inbox/index.html" class="topnav-link">Messages</a>
+      </nav>
+
+      <div class="role-toggle" id="roleToggle">
+        <button type="button" class="role-btn" data-role="buyer">Buyer</button>
+        <button type="button" class="role-btn active" data-role="supplier">Supplier</button>
+      </div>
+
+      <div class="topbar-actions">
+        <button type="button" class="icon-btn" aria-label="Favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.7C7 16.9 3 13.6 3 9.6 3 6.8 5.2 4.8 7.8 4.8c1.7 0 3.2.9 4.2 2.3 1-1.4 2.5-2.3 4.2-2.3 2.6 0 4.8 2 4.8 4.8 0 4-4 7.3-9 11.1z"></path>
+          </svg>
+        </button>
+        <button type="button" class="icon-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"></path>
+            <path d="M13.7 21a2 2 0 0 1-3.4 0"></path>
+          </svg>
+        </button>
+        <button type="button" class="avatar-btn" aria-label="Account">
+          <img src="assets/avatar.png" alt="John Supplier" />
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- ===== Unified sidebar ===== -->
+      <aside class="et-sidebar" data-et-rail></aside>
+
+      <!-- ===== Main content ===== -->
+      <main class="content">
+        <div class="page-head">
+          <h1>My Products</h1>
+          <p>Manage your inventory and wholesale listings</p>
+        </div>
+
+        <nav class="et-chipbar" aria-label="Product screens">
+          <a class="et-link" href="../easytrade-products/index.html" data-et="manageProducts">
+            Manage Products
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </a>
+          <a class="et-link et-link--ghost" href="../Frame 3/index.html" data-et="myProductsAlt">
+            Inventory List
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="19" y2="12"></line><polyline points="13 6 19 12 13 18"></polyline></svg>
+          </a>
+        </nav>
+
+        <div class="content-grid" id="contentGrid">
+          <section class="list-col">
+            <nav class="tabs" id="tabs">
+              <button type="button" class="tab active" data-tab="all">All Listings <span class="tab-count" id="countAll"></span></button>
+              <button type="button" class="tab" data-tab="published">Published <span class="tab-count" id="countPublished"></span></button>
+              <button type="button" class="tab" data-tab="draft">Drafts <span class="tab-count" id="countDrafts"></span></button>
+              <button type="button" class="tab" data-tab="outofstock">Out of Stock</button>
+            </nav>
+
+            <div class="table-card">
+              <div class="table-head">
+                <span>Product Details</span>
+                <span>Category</span>
+                <span>Price (Wholesale)</span>
+                <span>Status</span>
+                <span class="head-actions"></span>
+              </div>
+              <div id="productRows"></div>
+              <div class="table-footer">
+                <span class="showing" id="showingText"></span>
+                <div class="pager">
+                  <button type="button" class="pager-btn pager-prev" id="prevBtn">Prev</button>
+                  <button type="button" class="pager-btn pager-next" id="nextBtn">Next</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===== Quick edit panel ===== -->
+          <aside class="edit-panel" id="editPanel">
+            <div class="edit-head">
+              <h2>Quick Edit Listing</h2>
+              <button type="button" class="icon-btn small" id="closePanelBtn" aria-label="Close panel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="5" y1="5" x2="19" y2="19"></line>
+                  <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+              </button>
+            </div>
+
+            <form id="editForm" autocomplete="off">
+              <div class="field">
+                <label for="editImageBox">Product Image</label>
+                <div class="image-box" id="editImageBox" title="Click to change image">
+                  <img id="editImagePreview" src="assets/products/pedestal.png" alt="Product" />
+                  <span class="image-hint">Click to replace</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="editTitle">Product Title</label>
+                <input type="text" id="editTitle" required />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="editCategory">Category</label>
+                  <div class="select-wrap">
+                    <select id="editCategory"></select>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="editPrice">Price ($)</label>
+                  <input type="number" id="editPrice" min="0" step="0.01" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="editMoq">MOQ (Min. Order Qty)</label>
+                <input type="number" id="editMoq" min="1" step="1" required />
+              </div>
+
+              <div class="field">
+                <label for="editDesc">Brief Description</label>
+                <textarea id="editDesc" rows="4"></textarea>
+              </div>
+
+              <div class="edit-actions">
+                <button type="button" class="btn btn-discard" id="discardBtn"> Discard</button>
+                <button type="submit" class="btn btn-save">Save Changes</button>
+              </div>
+            </form>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <input type="file" id="imageInput" accept="image/*" hidden />
+
+<script src="../easytrade-sidebar.js"></script>
+  <script src="script.js"></script>
+<script src="../../easytrade-routes.js" defer></script>
+</body>
+</html>

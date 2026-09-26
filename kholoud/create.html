@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyTrade - Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--white);
+            color: var(--ink-soft);
+        }
+
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 80px;
+            overflow: hidden;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .left-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 35%, var(--brand-dark) 3px, transparent 3px),
+                radial-gradient(circle at 80% 70%, var(--brand) 4px, transparent 4px),
+                radial-gradient(circle at 12% 65%, var(--brand-light) 3px, transparent 3px),
+                radial-gradient(circle at 38% 30%, var(--brand-dark) 2px, transparent 2px);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .network-lines {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .network-lines svg {
+            width: 100%;
+            height: 100%;
+            opacity: 0.25;
+        }
+
+        .brand-badge {
+            width: 52px;
+            height: 52px;
+            background: var(--brand);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-badge svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .left-content {
+            position: relative;
+            z-index: 2;
+            max-width: 480px;
+        }
+
+        .left-content h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--ink);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .left-content p {
+            font-size: 16px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .form-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+            text-decoration: none;
+        }
+
+        .form-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .form-logo span {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+
+        .form-header {
+            margin-bottom: 28px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .form-header p a {
+            color: var(--brand);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-header p a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container .form-input {
+            padding: 14px 16px;
+            background-color: var(--surface);
+            border-color: var(--border);
+            font-size: 14px;
+        }
+
+        .form-container .form-input:focus {
+            background-color: var(--white);
+        }
+
+        .form-container .btn-primary.full-width {
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--faint);
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .divider span {
+            padding: 0 12px;
+        }
+
+        .social-auth {
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            font-weight: 500;
+            font-size: 14px;
+            border-color: var(--border);
+        }
+
+        .terms-text {
+            font-size: 11.5px;
+            color: var(--faint);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .terms-text a {
+            color: var(--muted);
+            text-decoration: underline;
+        }
+
+        .terms-text a:hover {
+            color: var(--brand);
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                padding: 40px 20px;
+                border-radius: 0;
+                min-height: 300px;
+            }
+
+            .right-panel {
+                padding: 30px 20px;
+            }
+
+            .left-content h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <div class="network-lines" aria-hidden="true">
+            <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 180 L250 80 L380 320 L150 400 Z" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <path d="M50 350 L250 80" stroke="#0284c7" stroke-width="1"/>
+                <circle cx="250" cy="80" r="4" fill="#0284c7"/>
+                <circle cx="380" cy="320" r="4" fill="#0284c7"/>
+                <circle cx="150" cy="400" r="4" fill="#0284c7"/>
+            </svg>
+        </div>
+
+        <div class="brand-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+        </div>
+
+        <div class="left-content">
+            <h1>Smarter wholesale sourcing starts here.</h1>
+            <p>Connect with verified global suppliers and streamline your procurement process with our intelligent B2B marketplace.</p>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="form-container">
+
+            <a href="index.html" class="form-logo">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>EasyTrade</span>
+            </a>
+
+            <div class="form-header">
+                <h2>Create your account</h2>
+                <p>Already have an account? <a href="login.html">Log in</a></p>
+            </div>
+
+            <form data-stub>
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Enter your full name" autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" name="password" class="form-input" placeholder="Min. 8 characters" autocomplete="new-password" minlength="8" required>
+                        <button type="button" class="password-toggle-btn" data-toggle-password="password" aria-label="Show password" aria-pressed="false"></button>
+                    </div>
+                </div>
+
+                <button type="submit" data-et="onboarding" class="btn-primary full-width">Create Account</button>
+            </form>
+
+            <div class="divider">
+                <span>Or continue with</span>
+            </div>
+
+            <div class="social-auth">
+                <button type="button" class="social-btn" data-provider="google">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.19v3.15C3.18 21.32 7.23 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.19C.43 8.12 0 9.87 0 12s.43 3.88 1.19 5.42l4.09-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.18 2.68 1.19 6.58l4.09 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                    Google
+                </button>
+                <button type="button" class="social-btn" data-provider="linkedin">
+                    <svg viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    LinkedIn
+                </button>
+            </div>
+
+            <p class="terms-text">
+                By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+<script src="easytrade-routes.js" defer></script>
+<script src="social-auth.js" defer></script>
+</body>
+</html>

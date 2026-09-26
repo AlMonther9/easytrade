@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyTrade — Notification Preferences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../easytrade-sidebar.css">
+<link rel="stylesheet" href="../easytrade-settings-sidebar.css">
+<link rel="stylesheet" href="../easytrade-topbar.css">
+</head>
+<body>
+
+<!-- Navbar: shared by every page, built by ../easytrade-topbar.js -->
+<header id="etTopbar"></header>
+
+<div class="layout et-page">
+  <aside class="et-settings-sidebar">
+    <p class="et-set-eyebrow">Settings</p>
+
+    <nav class="et-set-nav" aria-label="Settings">
+      <a href="../Buyer%20Personal%20Profile/index.html" class="et-set-item">
+        <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Public Profile</span>
+      </a>
+      <a href="../Frame%202/index.html" class="et-set-item">
+        <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/></svg>
+        <span>Account Security</span>
+      </a>
+      <a href="index.html" class="et-set-item is-active" aria-current="page">
+        <svg class="et-set-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 14.5 18 8.5Z"/><path d="M13.7 19.5a2 2 0 0 1-3.4 0"/></svg>
+        <span>Notifications</span>
+      </a>
+    </nav>
+
+    <div class="et-set-help">
+      <p class="et-set-help-title">Stay Updated</p>
+      <p class="et-set-help-text">Manage your alerts to never miss a trade opportunity or security update.</p>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="page-head">
+      <h1 id="pageTitle">Notification Preferences</h1>
+      <p id="pageSubtitle">Choose how and when you want to be notified about your account activities.</p>
+    </div>
+
+    <section class="card" id="prefsCard" aria-labelledby="pageTitle">
+      <div class="group">
+        <h2 class="group__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/>
+          </svg>
+          <span>Email Notifications</span>
+        </h2>
+
+        <div class="row">
+          <div class="row__text">
+            <p class="row__title">New Inquiry Messages</p>
+            <p class="row__desc">Receive an email when a supplier responds to your inquiry or sends a new quote.</p>
+          </div>
+          <button type="button" class="switch is-on" role="switch" aria-checked="true" data-pref="emailInquiry" aria-label="New Inquiry Messages">
+            <span class="switch__knob"></span>
+          </button>
+        </div>
+
+        <div class="row">
+          <div class="row__text">
+            <p class="row__title">Product Updates</p>
+            <p class="row__desc">Get notified about price drops or stock updates for items in your favorites list.</p>
+          </div>
+          <button type="button" class="switch is-on" role="switch" aria-checked="true" data-pref="emailProduct" aria-label="Product Updates">
+            <span class="switch__knob"></span>
+          </button>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="group">
+        <h2 class="group__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="4" width="19" height="13" rx="2.5"/><path d="M9 21h6M12 17v4"/>
+          </svg>
+          <span>Desktop/Browser Notifications</span>
+        </h2>
+
+        <div class="row">
+          <div class="row__text">
+            <p class="row__title">Verified Supplier Alerts</p>
+            <p class="row__desc">Real-time alerts when new verified suppliers join your relevant trade categories.</p>
+          </div>
+          <button type="button" class="switch" role="switch" aria-checked="false" data-pref="desktopSupplier" aria-label="Verified Supplier Alerts">
+            <span class="switch__knob"></span>
+          </button>
+        </div>
+
+        <div class="row">
+          <div class="row__text">
+            <p class="row__title">Security Alerts</p>
+            <p class="row__desc">Immediate notifications about new logins or changes to your account security settings.</p>
+          </div>
+          <button type="button" class="switch is-on" role="switch" aria-checked="true" data-pref="desktopSecurity" aria-label="Security Alerts">
+            <span class="switch__knob"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card__footer">
+        <button type="button" class="btn-primary" id="saveBtn">Save Preferences</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="../easytrade-topbar.js"></script>
+<script src="../easytrade-sidebar.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

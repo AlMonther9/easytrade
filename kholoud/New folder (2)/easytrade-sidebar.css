@@ -1,0 +1,229 @@
+/* =========================================================
+   EasyTrade — unified supplier sidebar (single source of truth)
+   Canonical design: "Verification Status Under Review".
+   Fixed to the left side on every page; shared by all pages.
+   ========================================================= */
+
+.et-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 252px;
+  background: #ffffff;
+  border-right: 1px solid #eceef1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 20px 24px;
+  overflow-y: auto;
+  z-index: 60;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.et-sidebar *,
+.et-sidebar *::before,
+.et-sidebar *::after {
+  box-sizing: border-box;
+}
+
+.et-brand {
+  display: flex;
+  align-items: center;
+  padding: 2px 12px;
+  margin-bottom: 42px;
+  text-decoration: none;
+}
+
+.et-brand-logo {
+  height: 34px;
+  width: auto;
+}
+
+.et-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Search lives in the sidebar so the top bar stays a single row */
+.et-sidebar__search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+  padding: 0 12px;
+  margin: 0 2px 22px;
+  border: 1px solid #eceef1;
+  border-radius: 10px;
+  background: #f7f8fa;
+  color: #98a2b3;
+}
+
+.et-sidebar__search:focus-within {
+  border-color: #0d9be1;
+  background: #ffffff;
+}
+
+.et-sidebar__search svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.et-sidebar__search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: #101828;
+}
+
+.et-sidebar__search input::placeholder {
+  color: #98a2b3;
+}
+
+.et-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #101828;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.et-nav-item:hover {
+  background: #f2f4f7;
+}
+
+.et-nav-item:focus-visible {
+  outline: 2px solid #0d9be1;
+  outline-offset: 2px;
+}
+
+.et-nav-item.active {
+  background: #e9f7fe;
+  color: #0d9be1;
+  font-weight: 600;
+}
+
+.et-nav-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.et-sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.et-user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 12px;
+}
+
+.et-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.et-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.et-user-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.et-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #101828;
+}
+
+.et-user-plan {
+  font-size: 13px;
+  color: #98a2b3;
+}
+
+/* Page content offset so nothing hides under the fixed sidebar */
+.et-page {
+  padding-left: 252px;
+}
+
+@media (max-width: 860px) {
+  .et-sidebar {
+    width: 76px;
+    padding: 24px 12px 16px;
+    align-items: center;
+  }
+
+  .et-brand {
+    padding: 0;
+    margin-bottom: 32px;
+  }
+
+  /* The logo file carries the wordmark, so crop down to the mark only */
+  .et-brand-logo {
+    width: 34px;
+    object-fit: cover;
+    object-position: left center;
+  }
+
+  .et-nav-item span,
+  .et-user-meta {
+    display: none;
+  }
+
+  .et-sidebar__search {
+    padding: 0;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+
+  .et-sidebar__search input {
+    display: none;
+  }
+
+  .et-nav-item {
+    padding: 12px;
+  }
+
+  .et-sidebar-footer {
+    align-items: center;
+    gap: 14px;
+  }
+
+  .et-user-card {
+    padding: 0;
+  }
+
+  .et-page {
+    padding-left: 76px;
+  }
+}
